@@ -1,4 +1,4 @@
-# Weekly. [Range Sum Query - Immutable](https://leetcode.com/explore/challenge/card/august-leetcoding-challenge-2021/615/week-3-august-15th-august-21st/3892/)
+# 303. [Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/)
 
 Given an integer array nums, handle multiple queries of the following type:
 
