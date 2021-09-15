@@ -5,7 +5,7 @@ class Solution {
     int result = 0;
 
     for(int i = 0; i < s.length(); i++) {
-      char previousChar = s.charAt(i);
+      char currentChar = s.charAt(i);
       char nextChar = 'a';
       if (i + 1 < s.length()) {
         nextChar = s.charAt(i + 1);
@@ -13,9 +13,7 @@ class Solution {
 
       int currentNumber = getValue(s.charAt(i));
 
-      if (previousChar == 'I' && (nextChar == 'V' || nextChar == 'X') ||
-        previousChar == 'X' && (nextChar == 'L' || nextChar == 'C') ||
-        previousChar == 'C' && (nextChar == 'D' || nextChar == 'M')) {
+      if (shouldSubtract(currentChar, nextChar)) {
         currentNumber = -currentNumber;
       }
 
@@ -23,6 +21,12 @@ class Solution {
     }
 
     return result;
+  }
+
+  private boolean shouldSubtract(char currentChar, char nextChar) {
+    return currentChar == 'I' && (nextChar == 'V' || nextChar == 'X') ||
+        currentChar == 'X' && (nextChar == 'L' || nextChar == 'C') ||
+        currentChar == 'C' && (nextChar == 'D' || nextChar == 'M');
   }
 
   private int getValue(char c){
