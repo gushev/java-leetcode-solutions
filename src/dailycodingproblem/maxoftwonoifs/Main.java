@@ -7,11 +7,11 @@ public class Main {
 
   private static int max(int a, int b) {
     int difference = a - b;
-    // Shift the 32 bit int number 31 bits (two's complement) to get the sign of the difference (positive or negative number)
+    // Shift the 32 bit integer 31 bits (two's complement) to get the sign of the difference (positive or negative number)
     // then ANDing the result so we can get either 1 (if negative) or 0 (if positive) to avoid comparison
     int sign = (difference >> 31) & 0x1;
-    // If a < b, then sign == 1 == sign * difference == difference == a - b
-    // If a >= b, then sign == 0 == sign * difference == 0 == a
+    // if a < b: sign == 1; sign * difference == difference == a - b
+    // if a >= b: sign == 0; sign * difference == 0
     return a - sign * difference;
   }
 }
