@@ -1,21 +1,19 @@
 package other.removeduplicatedsymbols;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class Solution {
 
   public static String removeDuplicates(String input) {
-    Map<Character, Integer> letterMap = new HashMap<>();
+    Set<Character> letterMap = new HashSet<>();
     String result = "";
 
     for(int i = 0; i < input.length(); i++) {
       char currentChar = input.charAt(i);
-      if (!letterMap.containsKey(currentChar)) {
+      if (!letterMap.contains(currentChar)) {
         result += currentChar;
-        letterMap.put(currentChar, 1);
+        letterMap.add(currentChar);
       }
     }
 
